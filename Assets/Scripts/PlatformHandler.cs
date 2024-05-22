@@ -4,16 +4,13 @@ using UnityEngine;
 public class PlatformHandler : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI platformText;
+    [SerializeField] private TouchController touchController;
+    [SerializeField] private GameObject joystickUI;
 
-    private void Update()
+    private void Start()
     {
-        // if (Utils.IsMobile())
-        // {
-        //     platformText.text = "Mobile";
-        // }
-        // else
-        // {
-        //     platformText.text = "Desktop";
-        // }
+        touchController.enabled = Utils.IsMobile();
+        joystickUI.SetActive(Utils.IsMobile());
+        platformText.text = Utils.IsMobile() ? "Mobile" : "Desktop";
     }
 }
