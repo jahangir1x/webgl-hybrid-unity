@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
-using UnityEditor.Search;
 using UnityEngine.UI;
 public class StallCollide : MonoBehaviour
 {
