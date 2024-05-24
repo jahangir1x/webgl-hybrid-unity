@@ -3,12 +3,20 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEditor.Search;
 using UnityEngine.UI;
+using UnityEditor;
 public class StallCollide : MonoBehaviour
 {
+    [SerializeField]
+    Text FinalScore;
+    [SerializeField]
+    GameObject panel;
+    float timer;
     [SerializeField]
     public int score;
     [SerializeField]
     Text scoreText;
+    [SerializeField]
+    Text timerText;
     
     PlayerInput playerInput;
     [SerializeField]
@@ -18,6 +26,7 @@ public class StallCollide : MonoBehaviour
         score = 0;
         inTrigger = false;
         playerInput = GetComponent<PlayerInput>();
+        timer = 10f;
     }
     void OnTriggerEnter(Collider collision){
         if(collision.CompareTag("Stalls")){
@@ -33,6 +42,21 @@ public class StallCollide : MonoBehaviour
         if(inTrigger){
             ElivateTray();
         }
+        timer -= Time.deltaTime;
+        timerText.text = "TimeLeft : " + timer.ToString(".00");
+        if(timer <= 0f){
+            turnOffAll();
+        }
+    }
+
+    
+    void turnOffAll(){
+        timer = 0.00f;
+        playerInput.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Tray.SetActive(false);
+        panel.SetActive(true);
+        FinalScore.text = "Total :" + score.ToString();
     }
     
     void ElivateTray(){
@@ -57,6 +81,6 @@ public class StallCollide : MonoBehaviour
 
     public void CollectWrongPack(){
         score -= 5;
-        scoreText.text = score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 }
