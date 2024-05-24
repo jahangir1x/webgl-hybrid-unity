@@ -9,8 +9,8 @@ public class PlatformHandler : MonoBehaviour
 
     private void Start()
     {
-        touchController.enabled = Utils.IsMobile();
-        joystickUI.SetActive(Utils.IsMobile());
+        // touchController.enabled = Utils.IsMobile();
+        // joystickUI.SetActive(Utils.IsMobile());
         platformText.text = Utils.IsMobile() ? "Mobile" : "Desktop";
     }
 }

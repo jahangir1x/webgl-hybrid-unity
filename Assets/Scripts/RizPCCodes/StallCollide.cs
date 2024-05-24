@@ -1,61 +1,47 @@
+using System;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+
 public class StallCollide : MonoBehaviour
 {
-    [SerializeField]
-    public int score;
-    [SerializeField]
-    Text scoreText;
-    
-    PlayerInput playerInput;
-    [SerializeField]
-    public GameObject Tray;
-    bool inTrigger;
-    void Start(){
-        score = 0;
-        inTrigger = false;
-        playerInput = GetComponent<PlayerInput>();
-    }
-    void OnTriggerEnter(Collider collision){
-        if(collision.CompareTag("Stalls")){
-            inTrigger = true;
-        }
+    private TrayElementHandler _trayElementHandler;
+
+    [SerializeField] private GameObject trayUI;
+
+    private PlayerInput _playerInput;
+
+    private void Start()
+    {
+        _playerInput = GetComponent<PlayerInput>();
     }
 
-    void OnTriggerExit(){
-        inTrigger = false;
-    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        var trayElementHandler = collision.gameObject.TryGetComponent<TrayElementHandler>(out _trayElementHandler)
+            ? _trayElementHandler
+            : null;
+        if (trayElementHandler == null) return;
 
-    void Update(){
-        if(inTrigger){
+        if (collision.CompareTag("Stalls") && trayElementHandler.IsTrayAvailable())
+        {
             ElivateTray();
         }
     }
-    
-    void ElivateTray(){
-        if(Input.GetKey(KeyCode.F)){
-            Tray.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            playerInput.enabled = false;
-        }
+
+    private void ElivateTray()
+    {
+        trayUI.SetActive(true);
+        _trayElementHandler.RandomizeElements();
+
+        _playerInput.enabled = false;
     }
 
 
-    public void DeactiveTray(){
-        Tray.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        playerInput.enabled = true;
-    }
-
-    public void CollectRightPack(){
-        score += 10;
-        scoreText.text = "Score: " + score.ToString();
-    }
-
-    public void CollectWrongPack(){
-        score -= 5;
-        scoreText.text = score.ToString();
+    public void DeactiveTray()
+    {
+        trayUI.SetActive(false);
+        _playerInput.enabled = true;
+        _trayElementHandler.ResetTrayTimer();
     }
 }

@@ -4,13 +4,13 @@ using UnityEngine;
 public class TouchController : MonoBehaviour
 {
     [SerializeField] private Joystick moveJoystick;
-    [SerializeField] private FixedTouchField touchField;
+    // [SerializeField] private FixedTouchField touchField;
 
-    [SerializeField] private float cameraAngleSpeed = 0.2f;
+    // [SerializeField] private float cameraAngleSpeed = 0.2f;
 
-    [SerializeField] private Vector3 cameraOffset;
-    [SerializeField] private float upAngle = 2f;
-    private float _cameraAngle;
+    // [SerializeField] private Vector3 cameraOffset;
+    // [SerializeField] private float upAngle = 2f;
+    // private float _cameraAngle;
     private StarterAssetsInputs _inputs;
 
 
