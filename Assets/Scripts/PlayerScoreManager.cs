@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerScoreManager : MonoBehaviour
 {
@@ -10,12 +13,37 @@ public class PlayerScoreManager : MonoBehaviour
     public int vitaminAScore;
     public int iodineScore;
     public int score;
+    public float gameDuration = 12f;
+
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TextMeshProUGUI gameOverText;
+    [SerializeField] private TextMeshProUGUI gameTimerTextUI;
+
 
     [SerializeField] private TextMeshProUGUI zincScoreUI;
     [SerializeField] private TextMeshProUGUI ironScoreUI;
     [SerializeField] private TextMeshProUGUI vitaminAScoreUI;
     [SerializeField] private TextMeshProUGUI iodineScoreUI;
     [SerializeField] private TextMeshProUGUI scoreUI;
+
+    private void Update()
+    {
+        gameDuration -= Time.deltaTime;
+        gameTimerTextUI.text = "Time: " + (int)gameDuration;
+        if (gameDuration <= 0)
+        {
+            turnOffAll();
+        }
+    }
+
+    private void turnOffAll()
+    {
+        gameDuration = 0f;
+        playerInput.enabled = false;
+        gameOverPanel.SetActive(true);
+        gameOverText.text = "Game Over\nYour Score: " + score;
+    }
 
     public void Process(int zincScore, int ironScore, int vitaminAScore, int iodineScore)
     {

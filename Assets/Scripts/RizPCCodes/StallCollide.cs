@@ -25,11 +25,11 @@ public class StallCollide : MonoBehaviour
 
         if (collision.CompareTag("Stalls") && trayElementHandler.IsTrayAvailable())
         {
-            ElivateTray();
+            ElevateTrayUI();
         }
     }
 
-    private void ElivateTray()
+    private void ElevateTrayUI()
     {
         trayUI.SetActive(true);
         _trayElementHandler.RandomizeElements();
