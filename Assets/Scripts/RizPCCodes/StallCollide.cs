@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.InputSystem;
-using UnityEditor.Search;
 using UnityEngine.UI;
-using UnityEditor;
 public class StallCollide : MonoBehaviour
 {
     [SerializeField]
@@ -18,14 +15,14 @@ public class StallCollide : MonoBehaviour
     [SerializeField]
     Text timerText;
     
-    PlayerInput playerInput;
+    PlayerMovement playerMovement;
     [SerializeField]
     public GameObject Tray;
     bool inTrigger;
     void Start(){
         score = 0;
         inTrigger = false;
-        playerInput = GetComponent<PlayerInput>();
+        playerMovement = GetComponent<PlayerMovement>();
         timer = 10f;
     }
     void OnTriggerEnter(Collider collision){
@@ -52,7 +49,7 @@ public class StallCollide : MonoBehaviour
     
     void turnOffAll(){
         timer = 0.00f;
-        playerInput.enabled = false;
+        playerMovement.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Tray.SetActive(false);
         panel.SetActive(true);
@@ -63,7 +60,7 @@ public class StallCollide : MonoBehaviour
         if(Input.GetKey(KeyCode.F)){
             Tray.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            playerInput.enabled = false;
+            playerMovement.enabled = false;
         }
     }
 
@@ -71,7 +68,7 @@ public class StallCollide : MonoBehaviour
     public void DeactiveTray(){
         Tray.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        playerInput.enabled = true;
+        playerMovement.enabled = true;
     }
 
     public void CollectRightPack(){
