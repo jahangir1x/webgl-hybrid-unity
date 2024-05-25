@@ -11,6 +11,16 @@ public class StallCollide : MonoBehaviour
 
     private PlayerMovement _playerMovement;
 
+    public static StallCollide Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     private void Start()
     {
         _playerMovement = GetComponent<PlayerMovement>();

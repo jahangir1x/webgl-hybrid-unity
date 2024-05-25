@@ -9,10 +9,8 @@ public class TrayElementHandler : MonoBehaviour
     // trayColumn : [ col1, col2, col3... ]
     // col1 : [ element1, element2, element3... ]
     // element1 : [ right, wrong]
-    [SerializeField] private Transform[] trayColumns;
-    private MeshRenderer _meshRenderer;
-    private BoxCollider _boxCollider;
-
+    private Transform[] _trayColumns;
+    [SerializeField] private GameObject indicatorEffectObject;
     public Slider timeSlider;
 
     [SerializeField] private float refillDuration = 3f;
@@ -20,9 +18,12 @@ public class TrayElementHandler : MonoBehaviour
 
     private void Awake()
     {
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _boxCollider = GetComponent<BoxCollider>();
         HideIndicator();
+    }
+
+    private void Start()
+    {
+        _trayColumns = CanvasHandler.Instance.trayColumns;
     }
 
     public void Update()
@@ -39,14 +40,12 @@ public class TrayElementHandler : MonoBehaviour
 
     private void ShowIndicator()
     {
-        _meshRenderer.enabled = true;
-        _boxCollider.enabled = true;
+        indicatorEffectObject.SetActive(true);
     }
 
     private void HideIndicator()
     {
-        _meshRenderer.enabled = false;
-        _boxCollider.enabled = false;
+        indicatorEffectObject.SetActive(false);
     }
 
     public void ResetTrayTimer()
@@ -63,7 +62,7 @@ public class TrayElementHandler : MonoBehaviour
     public void RandomizeElements()
     {
         // hide each element inside trayColumns 
-        foreach (var column in trayColumns)
+        foreach (var column in _trayColumns)
         {
             foreach (Transform element in column.transform)
             {
@@ -75,7 +74,7 @@ public class TrayElementHandler : MonoBehaviour
         }
 
         // randomly set active right or wrong element in each element of trayColumns
-        foreach (var column in trayColumns)
+        foreach (var column in _trayColumns)
         {
             foreach (Transform element in column.transform)
             {

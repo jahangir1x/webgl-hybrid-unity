@@ -26,6 +26,17 @@ public class PlayerScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI iodineScoreUI;
     [SerializeField] private TextMeshProUGUI scoreUI;
 
+    public static PlayerScoreManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+
     private void Update()
     {
         gameDuration -= Time.deltaTime;

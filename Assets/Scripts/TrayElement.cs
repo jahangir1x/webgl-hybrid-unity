@@ -9,7 +9,7 @@ public class TrayElement : MonoBehaviour
     public int ironScore;
     public int vitaminAScore;
     public int iodineScore;
-    [SerializeField] private PlayerScoreManager playerScoreManager;
+    private PlayerScoreManager _playerScoreManager;
 
     private Button button;
 
@@ -17,11 +17,12 @@ public class TrayElement : MonoBehaviour
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
+        _playerScoreManager = PlayerScoreManager.Instance;
     }
 
     private void OnButtonClick()
     {
-        playerScoreManager.Process(zincScore, ironScore, vitaminAScore, iodineScore);
+        _playerScoreManager.Process(zincScore, ironScore, vitaminAScore, iodineScore);
         gameObject.SetActive(false);
     }
 }
