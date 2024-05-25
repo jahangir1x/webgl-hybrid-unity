@@ -15,11 +15,10 @@ public class PlayerScoreManager : MonoBehaviour
     public int score;
     public float gameDuration = 12f;
 
-    [SerializeField] private PlayerInput playerInput;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private TextMeshProUGUI gameOverText;
     [SerializeField] private TextMeshProUGUI gameTimerTextUI;
-
+    [SerializeField] private PlayerMovement playerMovement;
 
     [SerializeField] private TextMeshProUGUI zincScoreUI;
     [SerializeField] private TextMeshProUGUI ironScoreUI;
@@ -40,7 +39,7 @@ public class PlayerScoreManager : MonoBehaviour
     private void turnOffAll()
     {
         gameDuration = 0f;
-        playerInput.enabled = false;
+        playerMovement.enabled = false;
         gameOverPanel.SetActive(true);
         gameOverText.text = "Game Over\nYour Score: " + score;
     }
