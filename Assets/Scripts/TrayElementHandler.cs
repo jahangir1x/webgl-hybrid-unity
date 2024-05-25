@@ -10,6 +10,8 @@ public class TrayElementHandler : MonoBehaviour
     // col1 : [ element1, element2, element3... ]
     // element1 : [ right, wrong]
     [SerializeField] private Transform[] trayColumns;
+    [SerializeField]
+    GameObject Effect;
     private MeshRenderer _meshRenderer;
     private BoxCollider _boxCollider;
 
@@ -39,13 +41,15 @@ public class TrayElementHandler : MonoBehaviour
 
     private void ShowIndicator()
     {
-        _meshRenderer.enabled = true;
+        _meshRenderer.enabled = false;
+        Effect.SetActive(true);
         _boxCollider.enabled = true;
     }
 
     private void HideIndicator()
     {
         _meshRenderer.enabled = false;
+        Effect.SetActive(false);
         _boxCollider.enabled = false;
     }
 
