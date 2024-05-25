@@ -41,7 +41,7 @@ public class PlayerScoreManager : MonoBehaviour
         gameDuration = 0f;
         playerMovement.enabled = false;
         gameOverPanel.SetActive(true);
-        gameOverText.text = "Game Over\nYour Score: " + score;
+        gameOverText.text = "Your Score: " + score;
     }
 
     public void Process(int zincScore, int ironScore, int vitaminAScore, int iodineScore)
@@ -57,5 +57,11 @@ public class PlayerScoreManager : MonoBehaviour
         vitaminAScoreUI.text = this.vitaminAScore.ToString();
         iodineScoreUI.text = this.iodineScore.ToString();
         scoreUI.text = score.ToString();
+    }
+
+    public void ReloadThisScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene()
+            .name);
     }
 }
