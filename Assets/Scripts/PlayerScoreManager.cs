@@ -25,6 +25,10 @@ public class PlayerScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI vitaminAScoreUI;
     [SerializeField] private TextMeshProUGUI iodineScoreUI;
     [SerializeField] private TextMeshProUGUI scoreUI;
+    public GameObject plusUIElement;
+    public GameObject minusUIElement;
+
+    private bool _isGameStopped = false;
 
     public static PlayerScoreManager Instance;
 
@@ -40,9 +44,16 @@ public class PlayerScoreManager : MonoBehaviour
     private void Update()
     {
         gameDuration -= Time.deltaTime;
-        gameTimerTextUI.text = "Time: " + (int)gameDuration;
         if (gameDuration <= 0)
         {
+            gameDuration = 0;
+        }
+
+        gameTimerTextUI.text = "Time: " + (int)gameDuration;
+
+        if (gameDuration <= 0 && !_isGameStopped)
+        {
+            _isGameStopped = true;
             turnOffAll();
         }
     }
