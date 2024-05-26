@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class CanvasHandler : MonoBehaviour
 {
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button TrayCloseButton;
+    [SerializeField] private VideoPlayer endingVideoPlayer;
     public Transform[] trayColumns;
     public static CanvasHandler Instance;
 
@@ -33,5 +35,10 @@ public class CanvasHandler : MonoBehaviour
     private void OnPlayAgainButtonClick()
     {
         PlayerScoreManager.Instance.ReloadThisScene();
+    }
+
+    public void StartVideo()
+    {
+        endingVideoPlayer.Play();
     }
 }

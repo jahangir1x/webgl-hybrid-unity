@@ -53,6 +53,7 @@ public class PlayerScoreManager : MonoBehaviour
         playerMovement.enabled = false;
         gameOverPanel.SetActive(true);
         gameOverText.text = "Your Score: " + score;
+        CanvasHandler.Instance.StartVideo();
     }
 
     public void Process(int zincScore, int ironScore, int vitaminAScore, int iodineScore)
