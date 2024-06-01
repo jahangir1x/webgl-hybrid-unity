@@ -7,7 +7,7 @@ public class StallCollide : MonoBehaviour
 {
     private TrayElementHandler _trayElementHandler;
 
-    [SerializeField] private GameObject trayUI;
+    private GameObject _trayUI;
 
     private PlayerMovement _playerMovement;
 
@@ -23,6 +23,7 @@ public class StallCollide : MonoBehaviour
 
     private void Start()
     {
+        _trayUI = CanvasHandler.Instance.trayUIObject;
         _playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -41,7 +42,7 @@ public class StallCollide : MonoBehaviour
 
     private void ElevateTrayUI()
     {
-        trayUI.SetActive(true);
+        _trayUI.SetActive(true);
         _trayElementHandler.RandomizeElements();
 
         _playerMovement.enabled = false;
@@ -50,7 +51,7 @@ public class StallCollide : MonoBehaviour
 
     public void DeactiveTray()
     {
-        trayUI.SetActive(false);
+        _trayUI.SetActive(false);
         _playerMovement.enabled = true;
         _trayElementHandler.ResetTrayTimer();
     }

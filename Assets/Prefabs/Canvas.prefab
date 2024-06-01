@@ -3348,11 +3348,13 @@ MonoBehaviour:
   playAgainButton: {fileID: 1493723777}
   TrayCloseButton: {fileID: 4046732485246337055}
   endingVideoPlayer: {fileID: 1281298517}
+  trayUIObject: {fileID: 4046732484557846732}
   trayColumns:
   - {fileID: 5159491396489282838}
   - {fileID: 5159491397376327415}
   - {fileID: 5159491397021615491}
   - {fileID: 5159491396915521870}
+  gameJoystick: {fileID: 3960921922452849741}
 --- !u!1 &5159491397243226174
 GameObject:
   m_ObjectHideFlags: 0
@@ -7639,6 +7641,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5159491396305107532}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3960921922452849741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18,
+    type: 3}
+  m_PrefabInstance: {fileID: 5159491396305107532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5159491396392551920
 PrefabInstance:
   m_ObjectHideFlags: 0

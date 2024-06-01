@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Animator anim;
-    [SerializeField] private Transform cam;
-    CharacterController controller;
+    private Transform _cam;
+    private CharacterController _controller;
     [SerializeField] float speed = 9f;
 
     private TouchController _touchController;
@@ -19,7 +19,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        if (Camera.main != null)
+        {
+            _cam = Camera.main.transform;
+        }
+        else
+        {
+            Debug.LogWarning("Main Camera not found");
+        }
+
+        _controller = GetComponent<CharacterController>();
         _touchController = GetComponent<TouchController>();
     }
 
@@ -47,12 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction.magnitude >= .1f)
         {
-            float targetDirection = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - cam.eulerAngles.y;
+            float targetDirection = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - _cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetDirection, ref smothVelocity, smothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetDirection, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            _controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
     }
 

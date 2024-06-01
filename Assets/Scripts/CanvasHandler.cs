@@ -10,7 +10,9 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button TrayCloseButton;
     [SerializeField] private VideoPlayer endingVideoPlayer;
+    public GameObject trayUIObject;
     public Transform[] trayColumns;
+    public Joystick gameJoystick;
     public static CanvasHandler Instance;
 
     private void Awake()
