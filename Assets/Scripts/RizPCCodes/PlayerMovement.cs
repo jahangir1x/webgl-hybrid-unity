@@ -70,12 +70,12 @@ public class PlayerMovement : MonoBehaviour
         if (x == 0 && z == 0)
         {
             anim.Play("Idle");
-            Debug.Log("idle");
+            // Debug.Log("idle");
         }
         else
         {
             anim.Play("Running");
-            Debug.Log("Running");
+            // Debug.Log("Running");
         }
     }
 }
