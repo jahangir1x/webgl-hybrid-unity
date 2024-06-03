@@ -3355,6 +3355,14 @@ MonoBehaviour:
   - {fileID: 5159491397021615491}
   - {fileID: 5159491396915521870}
   gameJoystick: {fileID: 3960921922452849741}
+  gameOverPanel: {fileID: 5159491396482051005}
+  gameOverText: {fileID: 9725330}
+  gameTimerTextUI: {fileID: 5159491396850997683}
+  zincScoreUI: {fileID: 5159491396856032164}
+  ironScoreUI: {fileID: 5159491396103106568}
+  vitaminAScoreUI: {fileID: 5159491397377542945}
+  iodineScoreUI: {fileID: 5159491395743370431}
+  scoreUI: {fileID: 5159491396103148454}
 --- !u!1 &5159491397243226174
 GameObject:
   m_ObjectHideFlags: 0

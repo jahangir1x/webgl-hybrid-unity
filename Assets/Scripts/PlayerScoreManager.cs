@@ -5,9 +5,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerScoreManager : MonoBehaviour
 {
+    private PlayerMovement _playerMovement;
     public int zincScore;
     public int ironScore;
     public int vitaminAScore;
@@ -15,16 +17,15 @@ public class PlayerScoreManager : MonoBehaviour
     public int score;
     public float gameDuration = 12f;
 
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private TextMeshProUGUI gameOverText;
-    [SerializeField] private TextMeshProUGUI gameTimerTextUI;
-    [SerializeField] private PlayerMovement playerMovement;
+    private GameObject _gameOverPanel;
+    private TextMeshProUGUI _gameOverText;
+    private TextMeshProUGUI _gameTimerTextUI;
 
-    [SerializeField] private TextMeshProUGUI zincScoreUI;
-    [SerializeField] private TextMeshProUGUI ironScoreUI;
-    [SerializeField] private TextMeshProUGUI vitaminAScoreUI;
-    [SerializeField] private TextMeshProUGUI iodineScoreUI;
-    [SerializeField] private TextMeshProUGUI scoreUI;
+    private TextMeshProUGUI _zincScoreUI;
+    private TextMeshProUGUI _ironScoreUI;
+    private TextMeshProUGUI _vitaminAScoreUI;
+    private TextMeshProUGUI _iodineScoreUI;
+    private TextMeshProUGUI _scoreUI;
     public GameObject plusUIElement;
     public GameObject minusUIElement;
 
@@ -40,6 +41,19 @@ public class PlayerScoreManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _playerMovement = PlayerMovement.Instance;
+        _gameOverPanel = CanvasHandler.Instance.gameOverPanel;
+        _gameOverText = CanvasHandler.Instance.gameOverText;
+        _gameTimerTextUI = CanvasHandler.Instance.gameTimerTextUI;
+        _zincScoreUI = CanvasHandler.Instance.zincScoreUI;
+        _ironScoreUI = CanvasHandler.Instance.ironScoreUI;
+        _vitaminAScoreUI = CanvasHandler.Instance.vitaminAScoreUI;
+        _iodineScoreUI = CanvasHandler.Instance.iodineScoreUI;
+        _scoreUI = CanvasHandler.Instance.scoreUI;
+    }
+
 
     private void Update()
     {
@@ -49,7 +63,7 @@ public class PlayerScoreManager : MonoBehaviour
             gameDuration = 0;
         }
 
-        gameTimerTextUI.text = "Time: " + (int)gameDuration;
+        _gameTimerTextUI.text = "Time: " + (int)gameDuration;
 
         if (gameDuration <= 0 && !_isGameStopped)
         {
@@ -61,9 +75,9 @@ public class PlayerScoreManager : MonoBehaviour
     private void turnOffAll()
     {
         gameDuration = 0f;
-        playerMovement.enabled = false;
-        gameOverPanel.SetActive(true);
-        gameOverText.text = "Your Score: " + score;
+        _playerMovement.enabled = false;
+        _gameOverPanel.SetActive(true);
+        _gameOverText.text = "Your Score: " + score;
         CanvasHandler.Instance.StartVideo();
     }
 
@@ -75,11 +89,11 @@ public class PlayerScoreManager : MonoBehaviour
         this.iodineScore += iodineScore;
         score = this.zincScore + this.ironScore + this.vitaminAScore + this.iodineScore;
 
-        zincScoreUI.text = this.zincScore.ToString();
-        ironScoreUI.text = this.ironScore.ToString();
-        vitaminAScoreUI.text = this.vitaminAScore.ToString();
-        iodineScoreUI.text = this.iodineScore.ToString();
-        scoreUI.text = score.ToString();
+        _zincScoreUI.text = this.zincScore.ToString();
+        _ironScoreUI.text = this.ironScore.ToString();
+        _vitaminAScoreUI.text = this.vitaminAScore.ToString();
+        _iodineScoreUI.text = this.iodineScore.ToString();
+        _scoreUI.text = score.ToString();
     }
 
     public void ReloadThisScene()

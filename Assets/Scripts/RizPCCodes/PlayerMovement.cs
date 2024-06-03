@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,13 +9,25 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _controller;
     [SerializeField] float speed = 9f;
 
-    private TouchController _touchController;
+    [HideInInspector] public TouchController touchController;
 
     float smothTime = 0.1f;
     float smothVelocity;
 
     public float moveVertical;
     public float moveHorizontal;
+    public static PlayerMovement Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
+        _controller = GetComponent<CharacterController>();
+        touchController = GetComponent<TouchController>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +40,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogWarning("Main Camera not found");
         }
-
-        _controller = GetComponent<CharacterController>();
-        _touchController = GetComponent<TouchController>();
     }
 
     // Update is called once per frame
@@ -37,8 +47,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Utils.IsMobile())
         {
-            moveVertical = _touchController.inputVector.y;
-            moveHorizontal = _touchController.inputVector.x;
+            moveVertical = touchController.inputVector.y;
+            moveHorizontal = touchController.inputVector.x;
         }
         else
         {
