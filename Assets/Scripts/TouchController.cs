@@ -1,5 +1,4 @@
 using System;
-using StarterAssets;
 using UnityEngine;
 
 public class TouchController : MonoBehaviour

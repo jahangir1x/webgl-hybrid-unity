@@ -61,8 +61,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicatorEffectObject: {fileID: 447530737614303862}
   timeSlider: {fileID: 8275115750121394846}
-  refillDuration: 4
-  timeSinceEmptyTray: -8
+  refillDuration: 7
+  timeSinceEmptyTray: -5
 --- !u!1 &7213160436770815171
 GameObject:
   m_ObjectHideFlags: 0

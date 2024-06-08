@@ -14,7 +14,7 @@ public class TrayElementHandler : MonoBehaviour
     public Slider timeSlider;
 
     [SerializeField] private float refillDuration = 3f;
-    [SerializeField] private float timeSinceEmptyTray = 3f;
+    private float _timeSinceEmptyTray = 3f;
 
     private void Awake()
     {
@@ -24,18 +24,19 @@ public class TrayElementHandler : MonoBehaviour
     private void Start()
     {
         _trayColumns = CanvasHandler.Instance.trayColumns;
+        _timeSinceEmptyTray = refillDuration - PlayerScoreManager.Instance.introDuration;
     }
 
     public void Update()
     {
-        timeSinceEmptyTray += Time.deltaTime;
-        if (timeSinceEmptyTray > refillDuration)
+        _timeSinceEmptyTray += Time.deltaTime;
+        if (_timeSinceEmptyTray > refillDuration)
         {
-            timeSinceEmptyTray = refillDuration;
+            _timeSinceEmptyTray = refillDuration;
             ShowIndicator();
         }
 
-        timeSlider.value = timeSinceEmptyTray / refillDuration;
+        timeSlider.value = _timeSinceEmptyTray / refillDuration;
     }
 
     private void ShowIndicator()
@@ -50,13 +51,13 @@ public class TrayElementHandler : MonoBehaviour
 
     public void ResetTrayTimer()
     {
-        timeSinceEmptyTray = 0;
+        _timeSinceEmptyTray = 0;
         HideIndicator();
     }
 
     public bool IsTrayAvailable()
     {
-        return Mathf.Approximately(timeSinceEmptyTray, refillDuration);
+        return Mathf.Approximately(_timeSinceEmptyTray, refillDuration);
     }
 
     public void RandomizeElements()

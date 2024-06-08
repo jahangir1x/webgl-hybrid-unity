@@ -29,7 +29,7 @@ public class PlayerScoreManager : MonoBehaviour
     private TextMeshProUGUI _scoreUI;
     public GameObject plusUIElement;
     public GameObject minusUIElement;
-    [SerializeField] private float introDuration = 12f;
+    public float introDuration = 12f;
     private bool _isGameStopped = false;
     private bool _isIntroOver = false;
 
