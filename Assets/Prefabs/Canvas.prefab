@@ -3468,6 +3468,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8585712103163110635, guid: c8c215bd3035b060ea32178f1d12e6d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813801086900256104, guid: c8c215bd3035b060ea32178f1d12e6d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183100899206508285, guid: c8c215bd3035b060ea32178f1d12e6d3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8c215bd3035b060ea32178f1d12e6d3, type: 3}
 --- !u!1 &4046732484557846732 stripped
