@@ -15,11 +15,12 @@ public class PlayerScoreManager : MonoBehaviour
     public int vitaminAScore;
     public int iodineScore;
     public int score;
-    public float gameDuration = 12f;
+    [SerializeField] private float totalGameDuration = 12f;
+    [SerializeField] private float currentGameDuration;
 
     private GameObject _gameOverPanel;
     private TextMeshProUGUI _gameOverText;
-    private TextMeshProUGUI _gameTimerTextUI;
+    private Slider _gameTimerSlider;
 
     private TextMeshProUGUI _zincScoreUI;
     private TextMeshProUGUI _ironScoreUI;
@@ -46,26 +47,28 @@ public class PlayerScoreManager : MonoBehaviour
         _playerMovement = PlayerMovement.Instance;
         _gameOverPanel = CanvasHandler.Instance.gameOverPanel;
         _gameOverText = CanvasHandler.Instance.gameOverText;
-        _gameTimerTextUI = CanvasHandler.Instance.gameTimerTextUI;
+        _gameTimerSlider = CanvasHandler.Instance.gameTimerSlider;
         _zincScoreUI = CanvasHandler.Instance.zincScoreUI;
         _ironScoreUI = CanvasHandler.Instance.ironScoreUI;
         _vitaminAScoreUI = CanvasHandler.Instance.vitaminAScoreUI;
         _iodineScoreUI = CanvasHandler.Instance.iodineScoreUI;
         _scoreUI = CanvasHandler.Instance.scoreUI;
+
+        currentGameDuration = totalGameDuration;
     }
 
 
     private void Update()
     {
-        gameDuration -= Time.deltaTime;
-        if (gameDuration <= 0)
+        currentGameDuration -= Time.deltaTime;
+        if (currentGameDuration <= 0)
         {
-            gameDuration = 0;
+            currentGameDuration = 0;
         }
 
-        _gameTimerTextUI.text = "Time: " + (int)gameDuration;
+        _gameTimerSlider.value = currentGameDuration / totalGameDuration;
 
-        if (gameDuration <= 0 && !_isGameStopped)
+        if (currentGameDuration <= 0 && !_isGameStopped)
         {
             _isGameStopped = true;
             turnOffAll();
@@ -74,9 +77,11 @@ public class PlayerScoreManager : MonoBehaviour
 
     private void turnOffAll()
     {
-        gameDuration = 0f;
+        currentGameDuration = 0f;
         _playerMovement.enabled = false;
         _gameOverPanel.SetActive(true);
+        CanvasHandler.Instance.gameJoystick.gameObject.SetActive(false);
+        CanvasHandler.Instance.gameTimerSlider.gameObject.SetActive(false);
         _gameOverText.text = "Your Score: " + score;
         CanvasHandler.Instance.StartVideo();
     }

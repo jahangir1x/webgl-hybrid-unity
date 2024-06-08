@@ -16,7 +16,7 @@ public class CanvasHandler : MonoBehaviour
     public Joystick gameJoystick;
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI gameTimerTextUI;
+    public Slider gameTimerSlider;
     public TextMeshProUGUI zincScoreUI;
     public TextMeshProUGUI ironScoreUI;
     public TextMeshProUGUI vitaminAScoreUI;
