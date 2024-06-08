@@ -381,7 +381,7 @@ Light:
   m_InnerSpotAngle: 40.78958
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -414,7 +414,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -684,6 +684,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Latern (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
@@ -3782,7 +3792,7 @@ Light:
   m_InnerSpotAngle: 56.790165
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3815,7 +3825,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -4504,7 +4514,7 @@ Light:
   m_InnerSpotAngle: 40.78958
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4537,7 +4547,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10848,6 +10858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AllGrass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031268315590642314, guid: f5de71aef69c62843b610b795151f551,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2037613161757788868, guid: f5de71aef69c62843b610b795151f551,
         type: 3}
@@ -24900,7 +24915,7 @@ Light:
   m_InnerSpotAngle: 40.78958
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -24933,7 +24948,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -25214,6 +25229,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736806223}
     m_Modifications:
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3563431892844068337, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
         type: 3}
       propertyPath: m_Name
@@ -29261,6 +29286,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736806223}
     m_Modifications:
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3563431892844068337, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
         type: 3}
       propertyPath: m_Name
@@ -34181,6 +34216,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
 --- !u!1 &1436918978
@@ -37152,6 +37197,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
 --- !u!1001 &1670969404
@@ -37779,6 +37834,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736806223}
     m_Modifications:
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3563431892844068337, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
         type: 3}
       propertyPath: m_Name
@@ -40496,6 +40561,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Latern (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
@@ -43879,6 +43954,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
 --- !u!4 &2119304007 stripped
@@ -44451,6 +44536,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Latern (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
@@ -45263,6 +45358,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Latern
       objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143263241622026137, guid: d6cfbca0aa720344e9a0d920d30c1e75,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cfbca0aa720344e9a0d920d30c1e75, type: 3}
 --- !u!1001 &4808360359058795982
@@ -46048,6 +46153,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 736806223}
     m_Modifications:
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 252588268248631561, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3563431892844068337, guid: 3f3fe03e033d43a49ba2cfb47082b18f,
         type: 3}
       propertyPath: m_Name
