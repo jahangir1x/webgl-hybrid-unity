@@ -29,8 +29,9 @@ public class PlayerScoreManager : MonoBehaviour
     private TextMeshProUGUI _scoreUI;
     public GameObject plusUIElement;
     public GameObject minusUIElement;
-
+    [SerializeField] private float introDuration = 12f;
     private bool _isGameStopped = false;
+    private bool _isIntroOver = false;
 
     public static PlayerScoreManager Instance;
 
@@ -54,7 +55,7 @@ public class PlayerScoreManager : MonoBehaviour
         _iodineScoreUI = CanvasHandler.Instance.iodineScoreUI;
         _scoreUI = CanvasHandler.Instance.scoreUI;
 
-        currentGameDuration = totalGameDuration;
+        currentGameDuration = totalGameDuration + introDuration;
     }
 
 
@@ -64,6 +65,12 @@ public class PlayerScoreManager : MonoBehaviour
         if (currentGameDuration <= 0)
         {
             currentGameDuration = 0;
+        }
+
+        if (!_isIntroOver && currentGameDuration <= totalGameDuration)
+        {
+            _gameTimerSlider.gameObject.SetActive(true);
+            _isIntroOver = true;
         }
 
         _gameTimerSlider.value = currentGameDuration / totalGameDuration;
@@ -82,6 +89,7 @@ public class PlayerScoreManager : MonoBehaviour
         _gameOverPanel.SetActive(true);
         CanvasHandler.Instance.gameJoystick.gameObject.SetActive(false);
         CanvasHandler.Instance.gameTimerSlider.gameObject.SetActive(false);
+        CanvasHandler.Instance.trayUIObject.SetActive(false);
         _gameOverText.text = "Your Score: " + score;
         CanvasHandler.Instance.StartVideo();
     }

@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Animator anim;
+    public Animator anim;
     private Transform _cam;
     private CharacterController _controller;
     [SerializeField] float speed = 9f;

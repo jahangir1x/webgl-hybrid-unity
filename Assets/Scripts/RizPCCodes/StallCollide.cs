@@ -42,15 +42,17 @@ public class StallCollide : MonoBehaviour
 
     private void ElevateTrayUI()
     {
+        AudioManager.Instance.PlayShort1();
         _trayUI.SetActive(true);
         _trayElementHandler.RandomizeElements();
-
+        _playerMovement.anim.Play("Idle");
         _playerMovement.enabled = false;
     }
 
 
     public void DeactiveTray()
     {
+        AudioManager.Instance.PlayShort2();
         _trayUI.SetActive(false);
         _playerMovement.enabled = true;
         _trayElementHandler.ResetTrayTimer();

@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class CanvasHandler : MonoBehaviour
 {
     [SerializeField] private Button playAgainButton;
-    [SerializeField] private Button TrayCloseButton;
+    [SerializeField] private Button trayCloseButton;
     [SerializeField] private VideoPlayer endingVideoPlayer;
     public GameObject trayUIObject;
     public Transform[] trayColumns;
@@ -35,7 +36,7 @@ public class CanvasHandler : MonoBehaviour
     private void Start()
     {
         playAgainButton.onClick.AddListener(OnPlayAgainButtonClick);
-        TrayCloseButton.onClick.AddListener(OnTrayCloseButtonClick);
+        trayCloseButton.onClick.AddListener(OnTrayCloseButtonClick);
     }
 
     private void OnTrayCloseButtonClick()
