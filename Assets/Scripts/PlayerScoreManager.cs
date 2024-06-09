@@ -93,6 +93,7 @@ public class PlayerScoreManager : MonoBehaviour
         CanvasHandler.Instance.trayUIObject.SetActive(false);
         _gameOverText.text = "Your Score: " + score;
         CanvasHandler.Instance.StartVideo();
+        AudioManager.Instance.MuteBackgroundAudio();
     }
 
     public void Process(int zincScore, int ironScore, int vitaminAScore, int iodineScore)

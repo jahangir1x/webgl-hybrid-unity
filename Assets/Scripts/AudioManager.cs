@@ -27,6 +27,11 @@ public class AudioManager : MonoBehaviour
         IsSoundOn = !IsSoundOn;
     }
 
+    public void MuteBackgroundAudio()
+    {
+        backgroundAudioSource.mute = true;
+    }
+
     public void PlayShort1()
     {
         if (shopEntryOutAudioSource.isPlaying)
