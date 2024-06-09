@@ -74,6 +74,7 @@ public class PlayerScoreManager : MonoBehaviour
         }
 
         _gameTimerSlider.value = currentGameDuration / totalGameDuration;
+        CanvasHandler.Instance.gameTimerText.text = ((int)currentGameDuration).ToString();
 
         if (currentGameDuration <= 0 && !_isGameStopped)
         {

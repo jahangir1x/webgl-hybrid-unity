@@ -18,6 +18,7 @@ public class CanvasHandler : MonoBehaviour
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverText;
     public Slider gameTimerSlider;
+    public TextMeshProUGUI gameTimerText;
     public TextMeshProUGUI zincScoreUI;
     public TextMeshProUGUI ironScoreUI;
     public TextMeshProUGUI vitaminAScoreUI;
