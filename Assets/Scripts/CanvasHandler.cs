@@ -23,6 +23,11 @@ public class CanvasHandler : MonoBehaviour
     public TextMeshProUGUI vitaminAScoreUI;
     public TextMeshProUGUI iodineScoreUI;
     public TextMeshProUGUI scoreUI;
+    [SerializeField] private Button soundButton;
+    private Image _soundImage;
+    [SerializeField] private Sprite soundOnSprite;
+    [SerializeField] private Sprite soundOffSprite;
+
     public static CanvasHandler Instance;
 
     private void Awake()
@@ -37,6 +42,15 @@ public class CanvasHandler : MonoBehaviour
     {
         playAgainButton.onClick.AddListener(OnPlayAgainButtonClick);
         trayCloseButton.onClick.AddListener(OnTrayCloseButtonClick);
+
+        _soundImage = soundButton.GetComponent<Image>();
+        soundButton.onClick.AddListener(OnSoundButtonClick);
+    }
+
+    private void OnSoundButtonClick()
+    {
+        AudioManager.Instance.ToggleSound();
+        _soundImage.sprite = AudioManager.IsSoundOn ? soundOnSprite : soundOffSprite;
     }
 
     private void OnTrayCloseButtonClick()
