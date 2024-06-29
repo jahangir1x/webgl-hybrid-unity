@@ -5794,6 +5794,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 153960372268990301}
     m_Modifications:
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.46908057
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.0111216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.012794378
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.011771216
+      objectReference: {fileID: 0}
     - target: {fileID: 7265949717286016060, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
         type: 3}
       propertyPath: m_RootOrder
@@ -10543,6 +10563,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stall1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.7184916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.2513807
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.31094953
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.03863257
       objectReference: {fileID: 0}
     - target: {fileID: 3727019537228654643, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
         type: 3}
@@ -17357,7 +17397,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 153960373790615542}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &153960373213232271
+--- !u!64 &153960373213232264
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17371,7 +17411,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1379806433689925699, guid: ced8328dcd6ff85449e524474b164944, type: 3}
---- !u!64 &153960373213232264
+--- !u!64 &153960373213232271
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17717,6 +17757,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stall1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.1087544
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.1605068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.034329414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.0210163
+      objectReference: {fileID: 0}
     - target: {fileID: 3727019537228654643, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -17739,6 +17809,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acfce327ea0bb8a43bdb47cd686cdcd2, type: 3}
+--- !u!1 &3574717504497640532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3727019536578949425, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 153960373824345445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1376093250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574717504497640532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47417945, y: 1.0571325, z: 0.76822615}
+  m_Center: {x: -1.47925, y: 0.07856643, z: 0.04571453}
 --- !u!4 &3574717504497640533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3727019536578949424, guid: acfce327ea0bb8a43bdb47cd686cdcd2,

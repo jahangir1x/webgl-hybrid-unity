@@ -28,6 +28,7 @@ public class CanvasHandler : MonoBehaviour
     private Image _soundImage;
     [SerializeField] private Sprite soundOnSprite;
     [SerializeField] private Sprite soundOffSprite;
+    public Animator scoreIconAnimator;
 
     public static CanvasHandler Instance;
 
