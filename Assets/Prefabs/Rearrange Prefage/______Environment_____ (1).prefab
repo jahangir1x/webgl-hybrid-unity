@@ -7014,6 +7014,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 153960372268990301}
     m_Modifications:
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.33292374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.8104197
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.065892905
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.32089344
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.09483063
+      objectReference: {fileID: 0}
     - target: {fileID: 7265949717286016060, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
         type: 3}
       propertyPath: m_RootOrder
@@ -18101,6 +18126,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 644cff1178cbc3147884e6707a385a0f, type: 2}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.26681715
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.92824626
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.01882479
+      objectReference: {fileID: 0}
+    - target: {fileID: 5061456762000529951, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.03217872
+      objectReference: {fileID: 0}
     - target: {fileID: 7265949717286016060, guid: c9c304f61e0b5764ab3cf7c9dca081c7,
         type: 3}
       propertyPath: m_RootOrder
@@ -19766,6 +19811,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7801416521713718495, guid: 746d3cd4f4aa42d488ef8f6b0db08229,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.6400208
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801416521713718495, guid: 746d3cd4f4aa42d488ef8f6b0db08229,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.12704565
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801416521713718495, guid: 746d3cd4f4aa42d488ef8f6b0db08229,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.5969755
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 746d3cd4f4aa42d488ef8f6b0db08229, type: 3}
 --- !u!4 &5914339949585426971 stripped
@@ -20105,6 +20165,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stall1 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.8574266
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.2244769
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.26891515
+      objectReference: {fileID: 0}
+    - target: {fileID: 3727019536578949431, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.052084204
       objectReference: {fileID: 0}
     - target: {fileID: 3727019537228654643, guid: acfce327ea0bb8a43bdb47cd686cdcd2,
         type: 3}
