@@ -10,8 +10,14 @@ public class TrayElement : MonoBehaviour
     public int vitaminAScore;
     public int iodineScore;
     private PlayerScoreManager _playerScoreManager;
+    private AudioSource _audioSource;
 
     private Button _button;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -38,6 +44,8 @@ public class TrayElement : MonoBehaviour
         }
 
         uiObject.transform.position = transform.position;
+
+        AudioManager.Instance.PlayElementPick(_audioSource.clip);
 
         gameObject.SetActive(false);
     }

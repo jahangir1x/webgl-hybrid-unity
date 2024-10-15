@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource shopEntryOutAudioSource;
     [SerializeField] private AudioSource backgroundAudioSource;
+    [SerializeField] private AudioSource elementPickAudioSource;
     [SerializeField] private AudioClip short1;
     [SerializeField] private AudioClip short2;
     public static bool IsSoundOn = true;
@@ -50,5 +51,10 @@ public class AudioManager : MonoBehaviour
         }
 
         shopEntryOutAudioSource.PlayOneShot(short2);
+    }
+
+    public void PlayElementPick(AudioClip clip)
+    {
+        elementPickAudioSource.PlayOneShot(clip);
     }
 }
