@@ -149,6 +149,13 @@
       }).catch((message) => {
         alert(message);
       });
+
+      // pre fetch video for fast loading
+      fetch(
+        "./StreamingAssets/end.webm"
+      ).then((response) => {
+        console.log("Video fetched");
+      })
     };
     document.body.appendChild(script);
   </script>

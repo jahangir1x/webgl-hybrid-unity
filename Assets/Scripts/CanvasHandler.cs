@@ -12,6 +12,7 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button trayCloseButton;
     [SerializeField] private VideoPlayer endingVideoPlayer;
+    [SerializeField] private string endingVideoFileName;
     public GameObject trayUIObject;
     public Transform[] trayColumns;
     public Joystick gameJoystick;
@@ -38,6 +39,9 @@ public class CanvasHandler : MonoBehaviour
         {
             Instance = this;
         }
+
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, endingVideoFileName);
+        endingVideoPlayer.url = videoPath;
     }
 
     private void Start()
