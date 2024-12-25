@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource elementPickAudioSource;
     [SerializeField] private AudioClip short1;
     [SerializeField] private AudioClip short2;
+    [SerializeField] private AudioClip longIntro;
     public static bool IsSoundOn = true;
     public static AudioManager Instance;
 
@@ -41,6 +42,16 @@ public class AudioManager : MonoBehaviour
         }
 
         shopEntryOutAudioSource.PlayOneShot(short1);
+    }
+
+    public void PlayLongIntro()
+    {
+        if (shopEntryOutAudioSource.isPlaying)
+        {
+            return;
+        }
+
+        shopEntryOutAudioSource.PlayOneShot(longIntro);
     }
 
     public void PlayShort2()

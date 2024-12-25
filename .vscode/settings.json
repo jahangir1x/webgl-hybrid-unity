@@ -41,7 +41,6 @@
         "**/*.meta": true,
         "**/*.prefab": true,
         "**/*.unity": true,
-        "build/": true,
         "Build/": true,
         "Library/": true,
         "library/": true,
@@ -51,5 +50,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "webgltest.sln"
+    "dotnet.defaultSolution": "webgl-hybrid-unity.sln"
 }

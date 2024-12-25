@@ -12,6 +12,8 @@ body { padding: 0; margin: 0 }
 .unity-mobile #unity-footer { display: none }
 #unity-webgl-logo { float:left; width: 204px; height: 38px; background: url('webgl-logo.png') no-repeat center }
 #unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
-#unity-fullscreen-button { position: absolute; right: 10px; top: 10px; z-index: 1000; width: 38px; height: 38px; background: url("fullscreen-button.png") no-repeat center; cursor: pointer; animation: bouncing 1s linear 0s infinite alternate }
-@keyframes bouncing { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+#unity-fullscreen-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; }
+#unity-fullscreen-button img { width: 10em; height: 10em; cursor: pointer; border: none; outline: none; animation: bouncing 1s linear 0s infinite alternate }
+@keyframes bouncing { 0%, 100% { width: 10em; height: 10em; } 50% { width: 13em; height: 13em; } }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+

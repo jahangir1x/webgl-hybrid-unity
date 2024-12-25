@@ -31,7 +31,7 @@ public class PlayerScoreManager : MonoBehaviour
     public GameObject minusUIElement;
     public float introDuration = 12f;
     private bool _isGameStopped = false;
-    private bool _isIntroOver = false;
+    private bool _isGameStarted = false;
 
     public static PlayerScoreManager Instance;
 
@@ -61,16 +61,16 @@ public class PlayerScoreManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (!_isGameStarted)
+        {
+            return;
+        }
+
         currentGameDuration -= Time.deltaTime;
         if (currentGameDuration <= 0)
         {
             currentGameDuration = 0;
-        }
-
-        if (!_isIntroOver && currentGameDuration <= totalGameDuration)
-        {
-            _gameTimerSlider.gameObject.SetActive(true);
-            _isIntroOver = true;
         }
 
         _gameTimerSlider.value = currentGameDuration / totalGameDuration;
@@ -81,6 +81,15 @@ public class PlayerScoreManager : MonoBehaviour
             _isGameStopped = true;
             turnOffAll();
         }
+    }
+
+    public void StartGame()
+    {
+        CanvasHandler.Instance.gameJoystick.gameObject.SetActive(true);
+        _isGameStarted = true;
+        _playerMovement.enabled = true;
+        AudioManager.Instance.PlayLongIntro();
+
     }
 
     private void turnOffAll()
